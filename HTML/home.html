@@ -37,7 +37,7 @@
 <body>
 
 <!-- app -->
-<div id="app">
+<div id="index">
     <!-- Header -->
     <header>
         <!-- Top-Header -->
@@ -48,7 +48,7 @@
                         <li>
                             <a href="tel:+111444989">
                                 <i class="fas fa-phone u-c-brand u-s-m-r-9"></i>
-                                Telephone:+111-444-989</a>
+                                Telefono:+111-444-989</a>
                         </li>
                         <li>
                             <a href="mailto:contact@domain.com">
@@ -61,19 +61,19 @@
                 <nav>
                     <ul class="secondary-nav g-nav">
                         <li>
-                            <a>My Account
+                            <a> Account
                                 <i class="fas fa-chevron-down u-s-m-l-9"></i>
                             </a>
                             <ul class="g-dropdown" style="width:200px">
                                 <li>
                                     <a href="cart.html">
                                         <i class="fas fa-cog u-s-m-r-9"></i>
-                                        My Cart</a>
+                                        Carrello</a>
                                 </li>
                                 <li>
                                     <a href="wishlist.html">
                                         <i class="far fa-heart u-s-m-r-9"></i>
-                                        My Wishlist</a>
+                                        Wishlist</a>
                                 </li>
                                 <li>
                                     <a href="checkout.html">
@@ -124,14 +124,15 @@
                     <div class="col-lg-3 col-md-9 col-sm-6">
                         <div class="brand-logo text-lg-center">
                             <a href="home.html">
-                                <img src="images/main-logo/groover-branding-1.png" alt="Groover Brand Logo" class="app-brand-logo">
+                                <img width="130" height="40" src="images/main-logo/groover-branding-1.png" alt="Groover Brand Logo"
+                                    class="app-brand-logo">
                             </a>
                         </div>
                     </div>
                     <div class="col-lg-6 u-d-none-lg">
                         <form class="form-searchbox">
-                            <label class="sr-only" for="search-landscape">Search</label>
-                            <input id="search-landscape" type="text" class="text-field" placeholder="Search everything">
+                            <label class="sr-only" for="search-landscape">Cerca</label>
+                            <input id="search-landscape" type="text" class="text-field" placeholder="Cerca tutto">
                             <div class="select-box-position">
                                 <div class="select-box-wrapper select-hide">
                                     <label class="sr-only" for="select-category">Choose category for search</label>
@@ -163,11 +164,7 @@
                     <div class="col-lg-3 col-md-3 col-sm-6">
                         <nav>
                             <ul class="mid-nav g-nav">
-                                <li class="u-d-none-lg">
-                                    <a href="home.html">
-                                        <i class="ion ion-md-home u-c-brand"></i>
-                                    </a>
-                                </li>
+                            
                                 <li class="u-d-none-lg">
                                     <a href="wishlist.html">
                                         <i class="far fa-heart"></i>
@@ -177,7 +174,7 @@
                                     <a id="mini-cart-trigger">
                                         <i class="ion ion-md-basket"></i>
                                         <span class="item-counter">4</span>
-                                        <span class="item-price">$220.00</span>
+                                        <span class="item-price">{_ numberFormat(220) _}</span>
                                     </a>
                                 </li>
                             </ul>
@@ -893,11 +890,12 @@
                     <div class="tab-content">
                         <div class="tab-pane active show fade" id="men-latest-products">
                             <div class="slider-fouc">
-                                <div class="products-slider owl-carousel" data-item="4">
-                                    <div class="item">
+                                <div class="products-slider owl-carousel" data-item="5">
+                                    <div v-for="(item, index) in prodottiUno.slice(0,4)" class="item">
                                         <div class="image-container">
                                             <a class="item-img-wrapper-link" href="single-product.html">
-                                                <img class="img-fluid" src="images/product/product@3x.jpg" alt="Product">
+                                                <img width="488" height="488" class="img-fluid"
+                                                    src="https://cdn.shopify.com/s/files/1/0273/1825/5691/products/400720_300x.jpg?v=157289197" alt="Product">
                                             </a>
                                             <div class="item-action-behaviors">
                                                 <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look
@@ -921,7 +919,7 @@
                                                     </li>
                                                 </ul>
                                                 <h6 class="item-title">
-                                                    <a href="single-product.html">Casual Hoodie Full Cotton</a>
+                                                    <a href="single-product.html">{_ item.title _}</a>
                                                 </h6>
                                                 <div class="item-stars">
                                                     <div class='star' title="0 out of 5 - based on 0 Reviews">
@@ -943,339 +941,7 @@
                                             <span>NEW</span>
                                         </div>
                                     </div>
-                                    <div class="item">
-                                        <div class="image-container">
-                                            <a class="item-img-wrapper-link" href="single-product.html">
-                                                <img class="img-fluid" src="images/product/product@3x.jpg" alt="Product">
-                                            </a>
-                                            <div class="item-action-behaviors">
-                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look
-                                                </a>
-                                                <a class="item-mail" href="javascript:void(0)">Mail</a>
-                                                <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
-                                                <a class="item-addCart" href="javascript:void(0)">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                        <div class="item-content">
-                                            <div class="what-product-is">
-                                                <ul class="bread-crumb">
-                                                    <li class="has-separator">
-                                                        <a href="shop-v1-root-category.html">Men's</a>
-                                                    </li>
-                                                    <li class="has-separator">
-                                                        <a href="shop-v2-sub-category.html">Tops</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="shop-v3-sub-sub-category.html">T-Shirts</a>
-                                                    </li>
-                                                </ul>
-                                                <h6 class="item-title">
-                                                    <a href="single-product.html">Mischka Plain Men T-Shirt</a>
-                                                </h6>
-                                                <div class="item-stars">
-                                                    <div class='star' title="0 out of 5 - based on 0 Reviews">
-                                                        <span style='width:0'></span>
-                                                    </div>
-                                                    <span>(0)</span>
-                                                </div>
-                                            </div>
-                                            <div class="price-template">
-                                                <div class="item-new-price">
-                                                    $55.00
-                                                </div>
-                                                <div class="item-old-price">
-                                                    $60.00
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <div class="image-container">
-                                            <a class="item-img-wrapper-link" href="single-product.html">
-                                                <img class="img-fluid" src="images/product/product@3x.jpg" alt="Product">
-                                            </a>
-                                            <div class="item-action-behaviors">
-                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look
-                                                </a>
-                                                <a class="item-mail" href="javascript:void(0)">Mail</a>
-                                                <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
-                                                <a class="item-addCart" href="javascript:void(0)">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                        <div class="item-content">
-                                            <div class="what-product-is">
-                                                <ul class="bread-crumb">
-                                                    <li class="has-separator">
-                                                        <a href="shop-v1-root-category.html">Men's</a>
-                                                    </li>
-                                                    <li class="has-separator">
-                                                        <a href="shop-v2-sub-category.html">Tops</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="shop-v4-filter-as-category.html">T-Shirts</a>
-                                                    </li>
-                                                </ul>
-                                                <h6 class="item-title">
-                                                    <a href="single-product.html">Black Bean Plain Men T-Shirt</a>
-                                                </h6>
-                                                <div class="item-stars">
-                                                    <div class='star' title="0 out of 5 - based on 0 Reviews">
-                                                        <span style='width:0'></span>
-                                                    </div>
-                                                    <span>(0)</span>
-                                                </div>
-                                            </div>
-                                            <div class="price-template">
-                                                <div class="item-new-price">
-                                                    $55.00
-                                                </div>
-                                                <div class="item-old-price">
-                                                    $60.00
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <div class="image-container">
-                                            <a class="item-img-wrapper-link" href="single-product.html">
-                                                <img class="img-fluid" src="images/product/product@3x.jpg" alt="Product">
-                                            </a>
-                                            <div class="item-action-behaviors">
-                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look
-                                                </a>
-                                                <a class="item-mail" href="javascript:void(0)">Mail</a>
-                                                <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
-                                                <a class="item-addCart" href="javascript:void(0)">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                        <div class="item-content">
-                                            <div class="what-product-is">
-                                                <ul class="bread-crumb">
-                                                    <li class="has-separator">
-                                                        <a href="shop-v1-root-category.html">Men's</a>
-                                                    </li>
-                                                    <li class="has-separator">
-                                                        <a href="shop-v2-sub-category.html">Bottoms</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="shop-v3-sub-sub-category.html">Jeans</a>
-                                                    </li>
-                                                </ul>
-                                                <h6 class="item-title">
-                                                    <a href="single-product.html">Regular Rock Blue Men Jean</a>
-                                                </h6>
-                                                <div class="item-stars">
-                                                    <div class='star' title="0 out of 5 - based on 0 Reviews">
-                                                        <span style='width:0'></span>
-                                                    </div>
-                                                    <span>(0)</span>
-                                                </div>
-                                            </div>
-                                            <div class="price-template">
-                                                <div class="item-new-price">
-                                                    $55.00
-                                                </div>
-                                                <div class="item-old-price">
-                                                    $60.00
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="tag new">
-                                            <span>NEW</span>
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <div class="image-container">
-                                            <a class="item-img-wrapper-link" href="single-product.html">
-                                                <img class="img-fluid" src="images/product/product@3x.jpg" alt="Product">
-                                            </a>
-                                            <div class="item-action-behaviors">
-                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look
-                                                </a>
-                                                <a class="item-mail" href="javascript:void(0)">Mail</a>
-                                                <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
-                                                <a class="item-addCart" href="javascript:void(0)">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                        <div class="item-content">
-                                            <div class="what-product-is">
-                                                <ul class="bread-crumb">
-                                                    <li class="has-separator">
-                                                        <a href="shop-v1-root-category.html">Men's</a>
-                                                    </li>
-                                                    <li class="has-separator">
-                                                        <a href="shop-v2-sub-category.html">Tops</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="shop-v3-sub-sub-category.html">Suits</a>
-                                                    </li>
-                                                </ul>
-                                                <h6 class="item-title">
-                                                    <a href="single-product.html">Black Maire Full Men Suit</a>
-                                                </h6>
-                                                <div class="item-stars">
-                                                    <div class='star' title="0 out of 5 - based on 0 Reviews">
-                                                        <span style='width:0'></span>
-                                                    </div>
-                                                    <span>(0)</span>
-                                                </div>
-                                            </div>
-                                            <div class="price-template">
-                                                <div class="item-new-price">
-                                                    $55.00
-                                                </div>
-                                                <div class="item-old-price">
-                                                    $60.00
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="tag sale">
-                                            <span>SALE</span>
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <div class="image-container">
-                                            <a class="item-img-wrapper-link" href="single-product.html">
-                                                <img class="img-fluid" src="images/product/product@3x.jpg" alt="Product">
-                                            </a>
-                                            <div class="item-action-behaviors">
-                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look
-                                                </a>
-                                                <a class="item-mail" href="javascript:void(0)">Mail</a>
-                                                <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
-                                                <a class="item-addCart" href="javascript:void(0)">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                        <div class="item-content">
-                                            <div class="what-product-is">
-                                                <ul class="bread-crumb">
-                                                    <li class="has-separator">
-                                                        <a href="shop-v1-root-category.html">Men's</a>
-                                                    </li>
-                                                    <li class="has-separator">
-                                                        <a href="shop-v2-sub-category.html">Outwear</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="shop-v3-sub-sub-category.html">Jackets</a>
-                                                    </li>
-                                                </ul>
-                                                <h6 class="item-title">
-                                                    <a href="single-product.html">Woodsmoke Rookie Parka Jacket</a>
-                                                </h6>
-                                                <div class="item-stars">
-                                                    <div class='star' title="0 out of 5 - based on 0 Reviews">
-                                                        <span style='width:0'></span>
-                                                    </div>
-                                                    <span>(0)</span>
-                                                </div>
-                                            </div>
-                                            <div class="price-template">
-                                                <div class="item-new-price">
-                                                    $55.00
-                                                </div>
-                                                <div class="item-old-price">
-                                                    $60.00
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <div class="image-container">
-                                            <a class="item-img-wrapper-link" href="single-product.html">
-                                                <img class="img-fluid" src="images/product/product@3x.jpg" alt="Product">
-                                            </a>
-                                            <div class="item-action-behaviors">
-                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look
-                                                </a>
-                                                <a class="item-mail" href="javascript:void(0)">Mail</a>
-                                                <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
-                                                <a class="item-addCart" href="javascript:void(0)">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                        <div class="item-content">
-                                            <div class="what-product-is">
-                                                <ul class="bread-crumb">
-                                                    <li class="has-separator">
-                                                        <a href="shop-v1-root-category.html">Men's</a>
-                                                    </li>
-                                                    <li class="has-separator">
-                                                        <a href="shop-v2-sub-category.html">Accessories</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="shop-v3-sub-sub-category.html">Ties</a>
-                                                    </li>
-                                                </ul>
-                                                <h6 class="item-title">
-                                                    <a href="single-product.html">Blue Zodiac Boxes Reg Tie
-                                                    </a>
-                                                </h6>
-                                                <div class="item-stars">
-                                                    <div class='star' title="0 out of 5 - based on 0 Reviews">
-                                                        <span style='width:0'></span>
-                                                    </div>
-                                                    <span>(0)</span>
-                                                </div>
-                                            </div>
-                                            <div class="price-template">
-                                                <div class="item-new-price">
-                                                    $55.00
-                                                </div>
-                                                <div class="item-old-price">
-                                                    $60.00
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <div class="image-container">
-                                            <a class="item-img-wrapper-link" href="single-product.html">
-                                                <img class="img-fluid" src="images/product/product@3x.jpg" alt="Product">
-                                            </a>
-                                            <div class="item-action-behaviors">
-                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look
-                                                </a>
-                                                <a class="item-mail" href="javascript:void(0)">Mail</a>
-                                                <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
-                                                <a class="item-addCart" href="javascript:void(0)">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                        <div class="item-content">
-                                            <div class="what-product-is">
-                                                <ul class="bread-crumb">
-                                                    <li class="has-separator">
-                                                        <a href="shop-v1-root-category.html">Men's</a>
-                                                    </li>
-                                                    <li class="has-separator">
-                                                        <a href="shop-v2-sub-category.html">Bottoms</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="shop-v3-sub-sub-category.html">Shoes</a>
-                                                    </li>
-                                                </ul>
-                                                <h6 class="item-title">
-                                                    <a href="single-product.html">Zambezi Carved Leather Business Casual Shoes
-                                                    </a>
-                                                </h6>
-                                                <div class="item-stars">
-                                                    <div class='star' title="0 out of 5 - based on 0 Reviews">
-                                                        <span style='width:0'></span>
-                                                    </div>
-                                                    <span>(0)</span>
-                                                </div>
-                                            </div>
-                                            <div class="price-template">
-                                                <div class="item-new-price">
-                                                    $55.00
-                                                </div>
-                                                <div class="item-old-price">
-                                                    $60.00
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="tag discount">
-                                            <span>-15%</span>
-                                        </div>
-                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -4876,7 +4542,12 @@ ga.l = +new Date;
 ga('create', 'UA-XXXXX-Y', 'auto');
 ga('send', 'pageview')
 </script>
+<script src="https://unpkg.com/vue-lazyload@1.3.3/vue-lazyload.js">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js">
+</script>
 <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
 <!-- Modernizr-JS -->
 <script type="text/javascript" src="js/vendor/modernizr-custom.min.js"></script>
 <!-- NProgress -->
@@ -4904,6 +4575,9 @@ ga('send', 'pageview')
 <!-- Owl Carousel -->
 <script type="text/javascript" src="js/owl.carousel.min.js"></script>
 <!-- Main -->
+<script src="js/vue/index.js"></script>
+
 <script type="text/javascript" src="js/app.js"></script>
+
 </body>
 </html>

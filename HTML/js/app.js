@@ -372,134 +372,152 @@ $(function () {
      * Initialize owl-carousel for all product-place section on page
      */
     const productSlider = function () {
-        // Get Collection of all Product Slider
-        let $productsSlider = $('.products-slider');
-        $productsSlider.on('initialize.owl.carousel',function () {
-           $(this).closest('.slider-fouc').removeAttr('class');
-        }).each(function () {
-            let thisInstance = $(this);
-            let itemPerLine = thisInstance.data('item');
-            thisInstance.owlCarousel({
-                autoplay: false,
-                loop: false,
-                dots: false,
-                rewind: true,
-                nav: true,
-                navElement: 'div',
-                navClass: ['product-slider-previous', 'product-slider-next'],
-                navText: ['<i class="fas fa-angle-left"></i>', '<i class="fas fa-angle-right"></i>'],
-                responsive: {
-                    0: {
-                        items: 1,
-                    },
-                    768: {
-                        items: itemPerLine - 2,
-                    },
-                    991: {
-                        items: itemPerLine - 1,
-                    },
-                    1200: {
-                        items: itemPerLine,
-                    },
-                }
-            });
-        });
-    };
-    /**
-     * Initialize owl-carousel for all Specific Category section on page
-     */
-    const SpecificCategorySlider = function () {
-        // Get Collection of all Product Slider
-        let $specificCategorySlider = $('.specific-category-slider');
-        $specificCategorySlider.on('initialize.owl.carousel',function () {
-            $(this).closest('.slider-fouc').removeAttr('class');
-        }).each(function () {
-            let thisInstance = $(this);
-            let itemPerLine = thisInstance.data('item');
-            thisInstance.owlCarousel({
-                autoplay: false,
-                loop: false,
-                dots: false,
-                rewind: true,
-                nav: true,
-                navElement: 'div',
-                navClass: ['specific-category-slider-previous', 'specific-category-slider-next'],
-                navText: ['<i class="fas fa-angle-left"></i>', '<i class="fas fa-angle-right"></i>'],
-                responsive: {
-                    0: {
-                        items: 1,
-                    },
-                    768: {
-                        items: 2,
-                    },
-                    991: {
-                        items: itemPerLine -1,
-                    },
-                    1200: {
-                        items: itemPerLine,
-                    },
-                }
-            });
-        });
-    };
-    /**
-     * On Product Slider Tabs: If content is hidden, Owl-carousel refuses to get the dimensions,
-     * Sounds like because by default un-active `tab` is set to "display: none"
-     * so it can't get the dimensions. Thus we Manually refresh the position on tab change.
-     */
-    const onTabChangeRefreshPositionOfCarousel = function () {
-        // When showing a new tab, the events fire.
-        // Specificity = 2
-        $('.section-maker [data-toggle="tab"]').on('shown.bs.tab', function (e) {
-            // Get the current click id of tab
-            let $currentID = $(e.target).attr('href');
-            // Trigger refresh `event` to current active `tab`
-            $($currentID + '.active').children().trigger('refresh.owl.carousel');
-        });
+			// Get Collection of all Product Slider
+			let $productsSlider = $(".products-slider");
+			$productsSlider
+				.on("initialize.owl.carousel", function () {
+					$(this).closest(".slider-fouc").removeAttr("class");
+				})
+				.each(function () {
+					let thisInstance = $(this);
+					let itemPerLine = thisInstance.data("item");
 
-    };
-    /**
-     * Initialize owl-carousel for brand slider
-     */
-    const brandSlider = function () {
-        let thisInstance = $('.brand-slider-content');
-        let itemPerLine = thisInstance.data('item');
-        thisInstance.owlCarousel({
-            autoplay: true,
-			autoplayTimeout: 8000,
-            loop: false,
-            dots: false,
-            rewind: true,
-            nav: true,
-            navElement: 'div',
-            navClass: ['brand-slider-previous', 'brand-slider-next'],
-            navText: ['<i class="fas fa-angle-left"></i>', '<i class="fas fa-angle-right"></i>'],
-            responsive: {
-                0: {
-                    items: 1,
-                },
-                768: {
-                    items: 3,
-                },
-                991: {
-                    items: itemPerLine,
-                },
-                1200: {
-                    items: itemPerLine,
-                },
-            }
-        });
-    };
+					thisInstance.owlCarousel({
+						autoplay: false,
+						loop: false,
+						dots: false,
+						rewind: true,
+						nav: true,
+						navElement: "div",
+						navClass: ["product-slider-previous", "product-slider-next"],
+						navText: [
+							'<i class="fas fa-angle-left"></i>',
+							'<i class="fas fa-angle-right"></i>',
+						],
+						responsive: {
+							0: {
+								items: 1,
+							},
+							768: {
+								items: itemPerLine - 2,
+							},
+							991: {
+								items: itemPerLine - 1,
+							},
+							1200: {
+								items: itemPerLine,
+							},
+						},
+					});
+				});
+		};
+		/**
+		 * Initialize owl-carousel for all Specific Category section on page
+		 */
+		const SpecificCategorySlider = function () {
+			// Get Collection of all Product Slider
+			let $specificCategorySlider = $(".specific-category-slider");
+			$specificCategorySlider
+				.on("initialize.owl.carousel", function () {
+					$(this).closest(".slider-fouc").removeAttr("class");
+				})
+				.each(function () {
+					let thisInstance = $(this);
+					let itemPerLine = thisInstance.data("item");
+					thisInstance.owlCarousel({
+						autoplay: false,
+						loop: false,
+						dots: false,
+						rewind: true,
+						nav: true,
+						navElement: "div",
+						navClass: [
+							"specific-category-slider-previous",
+							"specific-category-slider-next",
+						],
+						navText: [
+							'<i class="fas fa-angle-left"></i>',
+							'<i class="fas fa-angle-right"></i>',
+						],
+						responsive: {
+							0: {
+								items: 1,
+							},
+							768: {
+								items: 2,
+							},
+							991: {
+								items: itemPerLine - 1,
+							},
+							1200: {
+								items: itemPerLine,
+							},
+						},
+					});
+				});
+		};
+		/**
+		 * On Product Slider Tabs: If content is hidden, Owl-carousel refuses to get the dimensions,
+		 * Sounds like because by default un-active `tab` is set to "display: none"
+		 * so it can't get the dimensions. Thus we Manually refresh the position on tab change.
+		 */
+		const onTabChangeRefreshPositionOfCarousel = function () {
+			// When showing a new tab, the events fire.
+			// Specificity = 2
+			$('.section-maker [data-toggle="tab"]').on("shown.bs.tab", function (e) {
+				// Get the current click id of tab
+				let $currentID = $(e.target).attr("href");
+				// Trigger refresh `event` to current active `tab`
+				$($currentID + ".active")
+					.children()
+					.trigger("refresh.owl.carousel");
+			});
+		};
+		/**
+		 * Initialize owl-carousel for brand slider
+		 */
+		const brandSlider = function () {
+			let thisInstance = $(".brand-slider-content");
+			let itemPerLine = thisInstance.data("item");
+			thisInstance.owlCarousel({
+				autoplay: true,
+				autoplayTimeout: 8000,
+				loop: false,
+				dots: false,
+				rewind: true,
+				nav: true,
+				navElement: "div",
+				navClass: ["brand-slider-previous", "brand-slider-next"],
+				navText: [
+					'<i class="fas fa-angle-left"></i>',
+					'<i class="fas fa-angle-right"></i>',
+				],
+				responsive: {
+					0: {
+						items: 1,
+					},
+					768: {
+						items: 3,
+					},
+					991: {
+						items: itemPerLine,
+					},
+					1200: {
+						items: itemPerLine,
+					},
+				},
+			});
+		};
 
-
-
-    $(function () {
-        sliderMain();
-        productSlider();
-        SpecificCategorySlider();
-        onTabChangeRefreshPositionOfCarousel();
-        brandSlider();
-    });
+		$(function () {
+			sliderMain();
+			setTimeout(() => {
+				productSlider();
+			}, 2000);
+			SpecificCategorySlider();
+			onTabChangeRefreshPositionOfCarousel();
+			brandSlider();
+		});
 
     /**
      * Check everything including DOM elements and images loaded
